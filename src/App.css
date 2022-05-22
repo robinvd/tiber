@@ -37,18 +37,13 @@
   }
 }
 
-#root {
-  display: flex;
-  justify-content: center;
-
-}
-
 .App {
   display: flex;
   max-width: 1500px;
   min-width: 1300px;
   min-height: 100vh;
   max-height: 100vh;
+  margin: 0 auto;
 }
 
 .block {
