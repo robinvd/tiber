@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 interface Location {
@@ -16,7 +14,7 @@ interface Location {
 const LocationData: Location[] = [
   {
     name: "test1",
-    location: [50, 10],
+    location: [34, 90],
     items: [
       {
         image: "location1/image1.png",
@@ -26,11 +24,15 @@ const LocationData: Location[] = [
         image: "location1/image2.png",
         text: "In yellow: the demoloished part of the coast between Ponte Mazzini and Ponte Sisto About the map: The Forma Urbis was a series of maps produced by the Italian archeologist Rodolfo Lanciani between 1893 and 1901 and contains a juxtaposition of contemporaneous buildings and roads(in red) with known roman ruins dating up to the VI century.AD. (in black).Visible in light blue is the percourse of the Lungotevere street of today.",
       },
+      {
+        image: "location1/image3.png",
+        text: "In red - the new percourse of the Lungotevere, in green the banks next to the waterline About the map: The Nolli plan of 1748 is the first accurate modern cartography of Rome.",
+      },
     ],
   },
   {
     name: "test2",
-    location: [50, 94],
+    location: [33, 173],
     items: [
       {
         image: "location2/image1.png",
@@ -40,15 +42,23 @@ const LocationData: Location[] = [
         image: "location2/image2.jpg",
         text: "1711 The harbor and its surroundings before the construction of the Ospizio di San Michele. Painting by Gaspar van Wittel",
       },
+      {
+        image: "location2/image3.jpg",
+        text: "1750 The life on the harbor and the San Michele hospice.",
+      },
+      {
+        image: "location2/image4.png",
+        text: "1888 Photography of the harbor and its lighthouse.",
+      },
     ],
   },
 ]
 
 function ImageView(props: { current: number, currentImage: number, setCurrentImage: (x: number) => void }) {
   const next = (offset: number) => {
-    let newVal = props.current + offset;
+    let newVal = props.currentImage + offset;
     newVal = Math.max(newVal, 0);
-    newVal = Math.min(newVal, LocationData.length - 1);
+    newVal = Math.min(newVal, LocationData[props.current].items.length - 1);
     props.setCurrentImage(newVal);
   }
   return (
