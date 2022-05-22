@@ -10,6 +10,17 @@ html {
 
 .App {
   text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1em;
+}
+
+.App h1 {
+  text-transform: uppercase;
+}
+
+.App p {
+  text-justify: inter-word;
+  text-align: justify;
 }
 
 .App {
@@ -22,11 +33,11 @@ html {
 }
 
 .borders > div:not(:first-child) {
-  border-left: solid 1px grey;
+  border-left: solid 3px grey;
 }
 
 .borders-horizontal > div:not(:first-child) {
-  border-top: solid 1px grey;
+  border-top: solid 3px grey;
 }
 
 .map-sidebar {
@@ -73,7 +84,7 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 3px grey;
   padding-top: 100px;
 }
 
@@ -89,7 +100,7 @@ html {
 
 .image-view-item:last-child {
   margin-bottom: 100px;
-  border-top: solid 1px grey;
+  border-top: solid 3px grey;
 }
 
 .image-view p {
