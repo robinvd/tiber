@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -54,43 +54,26 @@ const LocationData: Location[] = [
   },
 ]
 
-function ImageView(props: { current: number, currentImage: number, setCurrentImage: (x: number) => void }) {
-  const next = (offset: number) => {
-    let newVal = props.currentImage + offset;
-    newVal = Math.max(newVal, 0);
-    newVal = Math.min(newVal, LocationData[props.current].items.length - 1);
-    props.setCurrentImage(newVal);
-  }
+function ImageView(props: { current: number, nextLocation: () => void}) {
   return (
-    <div className="block image-view-full">
-      <div className="image-view">
-        {LocationData[props.current].items.map((item, index) => {
-          return <img src={item.image} key={100 * props.current + index} style={{ display: index === props.currentImage ? "inline" : "none" }} />
-        })}
-      </div>
-      <div>
-        {props.currentImage + 1} / {LocationData[props.current].items.length}
-        <button onClick={() => next(-1)}>prev</button>
-        <button onClick={() => next(1)}>next</button>
-      </div>
+    <div className="image-view">
+      {LocationData[props.current].items.map((item, index) => {
+        return <div className="image-view-item">
+          <img src={item.image} key={100 * props.current + index} />
+          <p>{item.text}</p>
+        </div>
+      })}
+      {props.current !== LocationData.length - 1
+        ? <button className="image-view-button" onClick={props.nextLocation}>next location</button>
+        : <p className="image-view-button">this is the last location :)</p>
+      }
     </div>
-
   )
 }
 
-function TextView(props: { current: number, currentImage: number }) {
-  return <div className="text-view block"><p>{LocationData[props.current].items[props.currentImage].text}</p></div>
-}
-
 function MapView(props: { current: number, setCurrent: (x: number) => void }) {
-  const next = (offset: number) => {
-    let newVal = props.current + offset;
-    newVal = Math.max(newVal, 0);
-    newVal = Math.min(newVal, LocationData.length - 1);
-    props.setCurrent(newVal);
-  }
   return (
-    <div className="map-sidebar block borders-horizontal">
+    <div className="map-sidebar borders-horizontal">
       <div className="map-with-pointers">
         <div className="map-img">
           <img src="map.png" />
@@ -113,39 +96,33 @@ function MapView(props: { current: number, setCurrent: (x: number) => void }) {
           }
         }))}
       </div>
-      <div>
+      {/* <div>
         {props.current + 1} / {LocationData.length}
         <button onClick={() => next(-1)}>prev</button>
         <button onClick={() => next(1)}>next</button>
-      </div>
+      </div> */}
     </div>
   )
 }
 
-function InfoView(props: { current: number }) {
-  let [currentImages, setCurrentImages] = useState<Record<number, number>>({});
-  const currentImage = currentImages[props.current] || 0;
-  const setCurrentImage = (n: number) => {
-    setCurrentImages((items) => {
-      const newItems = {...items};
-      newItems[props.current] = n
-      return newItems
-    })
-  }
+function InfoView(props: { current: number, next: () => void }) {
   return (
     <div className="info-view borders-horizontal">
-      <ImageView current={props.current} currentImage={currentImage} setCurrentImage={setCurrentImage} />
-      <TextView current={props.current} currentImage={currentImage} />
+      <ImageView current={props.current} nextLocation={props.next }/>
+      {/* <TextView current={props.current} currentImage={currentImage} /> */}
     </div>
   )
 }
 
 function App() {
   let [current, setCurrent] = useState(0)
+  const next = () => {
+    setCurrent((current) => Math.min(current + 1, LocationData.length - 1))
+  }
   return (
     <div className="App borders">
       <MapView current={current} setCurrent={setCurrent} />
-      <InfoView current={current} />
+      <InfoView current={current} next={next} />
     </div>
   )
 }

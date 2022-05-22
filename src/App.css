@@ -1,40 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .App {
@@ -46,10 +21,6 @@
   margin: 0 auto;
 }
 
-.block {
-  margin: 10px;
-}
-
 .borders > div:not(:first-child) {
   border-left: solid 1px grey;
 }
@@ -57,7 +28,6 @@
 .borders-horizontal > div:not(:first-child) {
   border-top: solid 1px grey;
 }
-
 
 .map-sidebar {
   /* background-color: red; */
@@ -76,9 +46,6 @@
 .map-img img {
   width: 100%;
   height: 100%;
-  /* display: relative; */
-  /* position: relative; */
-  /* flex-direction: column; */
 }
 
 .map-img {
@@ -95,48 +62,38 @@
   min-width: 200px;
 }
 
-.image-view-full {
-  flex: 1;
-  max-height: 70vh;
+.image-view {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  align-items: center;
 }
 
-.image-view {
-  /* background-color: blue; */
-  /* min-height: 300px; */
-  /* flex: 1; */
-  /* flex-grow: 1; */
-  /* display: flex;
-  flex-direction: column; */
+.image-view-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: solid 1px grey;
+  padding-top: 100px;
+}
+
+.image-view-button {
+  margin: 100px 0;
 }
 
 .image-view img {
   max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
+  padding: 0 50px;
 }
 
-.image-view-full div {
-  max-width: 100%;
-  max-height: 100%;
-  display: flex;
+.image-view-item:last-child {
+  margin-bottom: 100px;
+  border-top: solid 1px grey;
 }
 
-.text-view {
-  flex-grow: 1;
-  /* background-color: green; */
-  overflow-y: scroll;
-  /* padding: 10px 200px; */
-  display: flex;
-  justify-content: center;
-
-}
-
-.text-view p {
+.image-view p {
   max-width: 500px;
-}
-
-.carousel.carousel-slider .control-arrow {
-  background: rgba(0, 0, 0, 0.2) !important;
 }
 
 .pointer-img {
