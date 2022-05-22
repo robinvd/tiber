@@ -36,3 +36,120 @@
     transform: rotate(360deg);
   }
 }
+
+#root {
+  display: flex;
+  justify-content: center;
+
+}
+
+.App {
+  display: flex;
+  max-width: 1500px;
+  min-width: 1300px;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.block {
+  margin: 10px;
+}
+
+.borders > div:not(:first-child) {
+  border-left: solid 1px grey;
+}
+
+.borders-horizontal > div:not(:first-child) {
+  border-top: solid 1px grey;
+}
+
+
+.map-sidebar {
+  /* background-color: red; */
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-with-pointers {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.map-img img {
+  width: 100%;
+  height: 100%;
+  /* display: relative; */
+  /* position: relative; */
+  /* flex-direction: column; */
+}
+
+.map-img {
+  display: block;
+  width: 600px;
+  /* height: auto; */
+}
+
+.info-view {
+  flex-grow: 1;
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  min-width: 200px;
+}
+
+.image-view-full {
+  flex: 1;
+  max-height: 70vh;
+}
+
+.image-view {
+  /* background-color: blue; */
+  /* min-height: 300px; */
+  /* flex: 1; */
+  /* flex-grow: 1; */
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.image-view img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-view-full div {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+}
+
+.text-view {
+  flex-grow: 1;
+  /* background-color: green; */
+  overflow-y: scroll;
+  /* padding: 10px 200px; */
+  display: flex;
+  justify-content: center;
+
+}
+
+.text-view p {
+  max-width: 500px;
+}
+
+.carousel.carousel-slider .control-arrow {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.pointer-img {
+  width: 50px;
+  position: absolute;
+  top: 10%;
+}
+
+.pointer-img:not(.active):not(:hover) {
+  filter: grayscale(60%);
+}
