@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 interface Location {
   name: string,
@@ -54,7 +55,7 @@ const LocationData: Location[] = [
   },
 ]
 
-function ImageView(props: { current: number, nextLocation: () => void}) {
+function ImageView(props: { current: number, nextLocation: () => void }) {
   return (
     <div className="image-view">
       {LocationData[props.current].items.map((item, index) => {
@@ -71,7 +72,7 @@ function ImageView(props: { current: number, nextLocation: () => void}) {
   )
 }
 
-function MapView(props: { current: number, setCurrent: (x: number) => void }) {
+function MapView(props: { current: number | null, setCurrent: (x: number) => void }) {
   return (
     <div className="map-sidebar borders-horizontal">
       <div className="map-with-pointers">
@@ -105,20 +106,36 @@ function MapView(props: { current: number, setCurrent: (x: number) => void }) {
   )
 }
 
-function InfoView(props: { current: number, next: () => void }) {
+function InfoView(props: { current: number | null, next: () => void }) {
+  if (props.current === null) {
+    return <div className="feed">
+      <TwitterTimelineEmbed
+        sourceType="profile" screenName="ciaotevere"
+        autoHeight={true}
+        noHeader={true}
+        noFooter={true}
+      />
+    </div>
+  }
+
   return (
     <div className="info-view borders-horizontal">
       <h1>{LocationData[props.current].name}</h1>
-      <ImageView current={props.current} nextLocation={props.next }/>
+      <ImageView current={props.current} nextLocation={props.next} />
       {/* <TextView current={props.current} currentImage={currentImage} /> */}
     </div>
   )
 }
 
 function App() {
-  let [current, setCurrent] = useState(0)
+  let [current, setCurrent] = useState<number | null>(null)
   const next = () => {
-    setCurrent((current) => Math.min(current + 1, LocationData.length - 1))
+    setCurrent((current) => {
+      if (current === null) {
+        return 0
+      } else {
+        return Math.min(current + 1, LocationData.length - 1)
+      }})
   }
   return (
     <div className="App borders">
