@@ -76,6 +76,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
   return (
     <div className="map-sidebar borders-horizontal">
       <div className="map-with-pointers">
+        <h1>ciao tevere</h1>
         <div className="map-img">
           <img src="map.png" />
         </div>
