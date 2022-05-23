@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
@@ -156,27 +156,33 @@ function InfoView(props: { current: number | null, next: () => void }) {
   }
 
   return (
-    <Stack spacing={3}>
-      <Typography variant="h4">
-        {LocationData[props.current].name}
-      </Typography>
-      {LocationData[props.current].items.map((item, index) => <Card key={index} sx={{ maxWidth: 500 }} elevation={3}>
-        <CardMedia
-          component="img"
-          src={item.image}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {item.text}
+    <Fragment>
+      {LocationData.map((location, index) =>
+        <Stack spacing={3} sx={{display: props.current === index ? 'initial' : 'none'}}>
+          <Typography variant="h4">
+            {location.name}
           </Typography>
-        </CardContent>
-        {/* <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions> */}
-      </Card>)}
-    </Stack>
+          {location.items.map((item, index) =>
+            <Card key={index} sx={{ maxWidth: 500 }} elevation={3}>
+              <CardMedia
+                component="img"
+                src={item.image}
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                  {item.text}
+                </Typography>
+              </CardContent>
+              {/* <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+              </CardActions> */}
+            </Card>
+          )}
+        </Stack>
+      )}
+    </Fragment>
   );
 }
 
@@ -193,6 +199,9 @@ function App() {
       }
     })
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [current])
   return (
     <ThemeProvider theme={createTheme(themeOptions)}>
       <Container sx={{ display: 'flex' }}>
