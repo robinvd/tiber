@@ -1,7 +1,33 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AppBar, Card, CardContent, CardMedia, CssBaseline, Drawer, Stack, ThemeOptions, Toolbar, Typography } from '@mui/material';
+import { Box, Container } from '@mui/system';
+
+const themeOptions: ThemeOptions = {
+  palette: {
+    primary: {
+      main: '#607D8B',
+    },
+    secondary: {
+      main: '#607D8B',
+    },
+    background: {
+      paper: '#fafafa',
+      default: '#CFD8DC',
+    },
+    text: {
+      primary: '#212121',
+      secondary: '#757575',
+    },
+  },
+  typography: {
+    fontFamily: 'Times New Roman',
+  },
+};
 
 interface Location {
   name: string,
@@ -82,28 +108,10 @@ const LocationData: Location[] = [
 
 ]
 
-function ImageView(props: { current: number, nextLocation: () => void }) {
-  return (
-    <div className="image-view">
-      {LocationData[props.current].items.map((item, index) => {
-        return <div className="image-view-item">
-          <img src={item.image} key={100 * props.current + index} />
-          <p>{item.text}</p>
-        </div>
-      })}
-      {props.current !== LocationData.length - 1
-        ? <button className="image-view-button" onClick={props.nextLocation}>next location</button>
-        : <p className="image-view-button">this is the last location :)</p>
-      }
-    </div>
-  )
-}
-
 function MapView(props: { current: number | null, setCurrent: (x: number) => void }) {
   return (
     <div className="map-sidebar borders-horizontal">
       <div className="map-with-pointers">
-        {/* <h1>ciao tevere</h1> */}
         <div className="map-img">
           <img src="map.png" />
         </div>
@@ -136,24 +144,43 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
 
 function InfoView(props: { current: number | null, next: () => void }) {
   if (props.current === null) {
-    return <div className="feed">
+    return <Card>
       <TwitterTimelineEmbed
         sourceType="profile" screenName="ciaotevere"
-        autoHeight={true}
+        autoHeight={false}
         noHeader={true}
         noFooter={true}
+        noScrollbar={true}
       />
-    </div>
+    </Card>
   }
 
   return (
-    <div className="info-view borders-horizontal">
-      <h1>{LocationData[props.current].name}</h1>
-      <ImageView current={props.current} nextLocation={props.next} />
-      {/* <TextView current={props.current} currentImage={currentImage} /> */}
-    </div>
-  )
+    <Stack spacing={3}>
+      <Typography variant="h4">
+        {LocationData[props.current].name}
+      </Typography>
+      {LocationData[props.current].items.map((item, index) => <Card key={index} sx={{ maxWidth: 500 }} elevation={3}>
+        <CardMedia
+          component="img"
+          src={item.image}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            {item.text}
+          </Typography>
+        </CardContent>
+        {/* <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions> */}
+      </Card>)}
+    </Stack>
+  );
 }
+
+const drawerWidth = 600;
 
 function App() {
   let [current, setCurrent] = useState<number | null>(null)
@@ -163,14 +190,42 @@ function App() {
         return 0
       } else {
         return Math.min(current + 1, LocationData.length - 1)
-      }})
+      }
+    })
   }
   return (
-    <div className="App borders">
-      <MapView current={current} setCurrent={setCurrent} />
-      <InfoView current={current} next={next} />
-    </div>
-  )
+    <ThemeProvider theme={createTheme(themeOptions)}>
+      <Container sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+          <Toolbar>
+            <Container>
+              <Typography variant="h6" noWrap component="div">
+                Ciaotevere
+              </Typography>
+            </Container>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+          }}
+        >
+          <Toolbar />
+          <Box sx={{ overflow: 'auto' }}>
+            <MapView current={current} setCurrent={setCurrent} />
+          </Box>
+        </Drawer>
+        <Container component="main" sx={{ flexGrow: 1, p: 3, minWidth: 550 }}>
+          <Toolbar />
+          <InfoView current={current} next={next} />
+        </Container>
+      </Container>
+    </ThemeProvider>
+  );
 }
 
 export default App;
