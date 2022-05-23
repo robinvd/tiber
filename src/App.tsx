@@ -32,6 +32,28 @@ const LocationData: Location[] = [
     ],
   },
   {
+    name: "Porto di Ripa Grande",
+    location: [61, 139],
+    items: [
+      {
+        image: "location2/image1.png",
+        text: "1625 The fluvial transport of the city in the region of Porta Portes, before the construction of the Ripa Grande harbor. Drawing by Giovanni Maggi",
+      },
+      {
+        image: "location2/image2.jpg",
+        text: "1711 The harbor and its surroundings before the construction of the Ospizio di San Michele. Painting by Gaspar van Wittel",
+      },
+      {
+        image: "location2/image3.jpg",
+        text: "1750 The life on the harbor and the San Michele hospice.",
+      },
+      {
+        image: "location2/image4.png",
+        text: "1888 Photography of the harbor and its lighthouse.",
+      },
+    ],
+  },
+  {
     name: "Ex-Arsenale Clementino Pontificio",
     location: [53, 146],
     items: [
@@ -57,28 +79,7 @@ const LocationData: Location[] = [
       },
     ],
   },
-  {
-    name: "Porto di Ripa Grande",
-    location: [33, 173],
-    items: [
-      {
-        image: "location2/image1.png",
-        text: "1625 The fluvial transport of the city in the region of Porta Portes, before the construction of the Ripa Grande harbor. Drawing by Giovanni Maggi",
-      },
-      {
-        image: "location2/image2.jpg",
-        text: "1711 The harbor and its surroundings before the construction of the Ospizio di San Michele. Painting by Gaspar van Wittel",
-      },
-      {
-        image: "location2/image3.jpg",
-        text: "1750 The life on the harbor and the San Michele hospice.",
-      },
-      {
-        image: "location2/image4.png",
-        text: "1888 Photography of the harbor and its lighthouse.",
-      },
-    ],
-  },
+
 ]
 
 function ImageView(props: { current: number, nextLocation: () => void }) {
