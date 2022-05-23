@@ -201,7 +201,7 @@ function App() {
           <Toolbar>
             <Container>
               <Typography variant="h6" noWrap component="div">
-                Ciaotevere
+                CIAOTEVERE
               </Typography>
             </Container>
           </Toolbar>
