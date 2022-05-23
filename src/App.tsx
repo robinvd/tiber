@@ -32,6 +32,32 @@ const LocationData: Location[] = [
     ],
   },
   {
+    name: "Ex-Arsenale Clementino Pontificio",
+    location: [53, 146],
+    items: [
+      {
+        image: "location3/image1.jpg",
+        text: "Pope Clement XI built the new papal arsenal, intended for the maintenance of the river boats, as well as the commercial papal ships. Its position just outside the excise city wall can be explained with the purpose to reduce the fiscal pressure on the materials used in maintenance activities. 1754- Represents the view of the Port of Ripa Grande ; Arsenale Pontificio on the Tiber in Rome with the Aventine on the right.",
+      },
+      {
+        image: "location3/image2.jpg",
+        text: "Flood of 1915",
+      },
+      {
+        image: "location3/image3.jpg",
+        text: "The launch of the pirodaga built in 1842 in the papal arsenals of Ripa Grande.It took place on November 30, 1842 in the river cantıere built by Gregory 16. out of porta portese",
+      },
+      {
+        image: "location3/image4.png",
+        text: "1906 With the construction of the embankments and the demolition of the Port, port activities move towards the arsenal.",
+      },
+      {
+        image: "location3/image5.jpg",
+        text: "As can be seen in a photo from the 70s, Arsenal used to be a warehouse as a repair shop. Today, it is preparing to host the Quadrianale Roma as an exhibition space. Before the Arsenal, it was once used as a warehouse for art. in 1798 as a warehouse for works of art stolen by the French from Napoleon, before sending them to France.",
+      },
+    ],
+  },
+  {
     name: "Porto di Ripa Grande",
     location: [33, 173],
     items: [
@@ -76,7 +102,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
   return (
     <div className="map-sidebar borders-horizontal">
       <div className="map-with-pointers">
-        <h1>ciao tevere</h1>
+        {/* <h1>ciao tevere</h1> */}
         <div className="map-img">
           <img src="map.png" />
         </div>
