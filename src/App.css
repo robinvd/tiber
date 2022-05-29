@@ -112,7 +112,7 @@
 }
 
 .pointer-img:not(.active):not(:hover) {
-  filter: grayscale(60%);
+  filter: grayscale(35%);
 }
 /*
 .feed {
