@@ -44,7 +44,7 @@ interface Location {
 const LocationData: Location[] = [
   {
     name: "Farnesina garden",
-    location: [34, 90],
+    location: [600, 90],
     items: [
       {
         image: "location1/image1.png",
@@ -115,12 +115,21 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
   let {height} = useWindowDimensions();
   return (
     <map_interaction.MapInteractionCSS minScale={1} maxScale={3} translationBounds={{
-      xMin: 600 - 944,
-      xMax: 0,
-      yMin: height - 1169,
-      yMax: 0,
+      // xMin: 600 - 944,
+      // xMax: 0,
+      // yMin: height - 1169,
+      // yMax: 0,
     }}>
-    <div className="map-with-pointers">
+    <div className="map-with-pointers" onClick={(event) => {
+      // @ts-ignore
+      const target = event.target.closest('.map-with-pointers');
+      // @ts-ignore
+      const {left, top} = target.getBoundingClientRect();
+      const x = event.clientX - left;
+      const y = event.clientY - top;
+
+      console.log(Math.round(x - 25), Math.round(y - 50));
+    }}>
       <div className="map-img">
         <img src="map.png" />
       </div>
@@ -132,7 +141,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
         if (location.location) {
           return <img
             key={index}
-            style={{ left: location.location[0] / 100 * 600, top: location.location[1] / 100 * 600 }}
+            style={{ left: location.location[0], top: location.location[1]}}
             className={className}
             src="pointer.png"
             onClick={() => props.setCurrent(index)}
@@ -162,7 +171,7 @@ function InfoView(props: { current: number | null, next: () => void }) {
   return (
     <Fragment>
       {LocationData.map((location, index) =>
-        <Stack spacing={3} sx={{ display: props.current === index ? 'initial' : 'none' }}>
+        <Stack key={index} spacing={3} sx={{ display: props.current === index ? 'initial' : 'none' }}>
           <Typography variant="h4">
             {location.name}
           </Typography>
