@@ -6,6 +6,9 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AppBar, Card, CardContent, CardMedia, CssBaseline, Drawer, Stack, ThemeOptions, Toolbar, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
+import useWindowDimensions from './utils';
+
+const map_interaction = require('react-map-interaction');
 
 const themeOptions: ThemeOptions = {
   palette: {
@@ -59,7 +62,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Porto di Ripa Grande",
-    location: [61, 139],
+    location: [61, 60],
     items: [
       {
         image: "location2/image1.png",
@@ -81,7 +84,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Ex-Arsenale Clementino Pontificio",
-    location: [53, 146],
+    location: [53, 70],
     items: [
       {
         image: "location3/image1.jpg",
@@ -109,36 +112,37 @@ const LocationData: Location[] = [
 ]
 
 function MapView(props: { current: number | null, setCurrent: (x: number) => void }) {
+  let {height} = useWindowDimensions();
   return (
-    <div className="map-sidebar borders-horizontal">
-      <div className="map-with-pointers">
-        <div className="map-img">
-          <img src="map.png" />
-        </div>
-        {(LocationData.map((location, index) => {
-          let className = "pointer-img"
-          if (index === props.current) {
-            className += " active"
-          }
-          if (location.location) {
-            return <img
-              key={index}
-              style={{ left: location.location[0] / 100 * 600, top: location.location[1] / 100 * 600 }}
-              className={className}
-              src="pointer.png"
-              onClick={() => props.setCurrent(index)}
-            />
-          } else {
-            return ''
-          }
-        }))}
+    <map_interaction.MapInteractionCSS minScale={1} maxScale={3} translationBounds={{
+      xMin: 600 - 944,
+      xMax: 0,
+      yMin: height - 1169,
+      yMax: 0,
+    }}>
+    <div className="map-with-pointers">
+      <div className="map-img">
+        <img src="map.png" />
       </div>
-      {/* <div>
-        {props.current + 1} / {LocationData.length}
-        <button onClick={() => next(-1)}>prev</button>
-        <button onClick={() => next(1)}>next</button>
-      </div> */}
+      {(LocationData.map((location, index) => {
+        let className = "pointer-img"
+        if (index === props.current) {
+          className += " active"
+        }
+        if (location.location) {
+          return <img
+            key={index}
+            style={{ left: location.location[0] / 100 * 600, top: location.location[1] / 100 * 600 }}
+            className={className}
+            src="pointer.png"
+            onClick={() => props.setCurrent(index)}
+          />
+        } else {
+          return ''
+        }
+      }))}
     </div>
+    </map_interaction.MapInteractionCSS>
   )
 }
 
@@ -158,7 +162,7 @@ function InfoView(props: { current: number | null, next: () => void }) {
   return (
     <Fragment>
       {LocationData.map((location, index) =>
-        <Stack spacing={3} sx={{display: props.current === index ? 'initial' : 'none'}}>
+        <Stack spacing={3} sx={{ display: props.current === index ? 'initial' : 'none' }}>
           <Typography variant="h4">
             {location.name}
           </Typography>
@@ -206,11 +210,11 @@ function App() {
     <ThemeProvider theme={createTheme(themeOptions)}>
       <Container sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+        <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, minHeight: 64 }}>
           <Toolbar>
-            <Container>
-              <Typography variant="h6" noWrap component="div">
-                CIAOTEVERE
+            <Container sx={{ textAlign: 'center' }}>
+              <Typography variant="h4" noWrap component="div">
+                CIAO TEVERE!
               </Typography>
             </Container>
           </Toolbar>

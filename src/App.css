@@ -47,21 +47,21 @@
 } */
 
 .map-with-pointers {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
+  /* width: 100%;
+  height: 100%; */
+  /* overflow-y: scroll; */
   position: relative;
 }
 
-.map-img img {
+/* .map-img img {
   width: 100%;
   height: 100%;
-}
+} */
 
-.map-img {
+/* .map-img {
   display: block;
   width: 600px;
-}
+} */
 /*
 .info-view {
   flex-grow: 1;
