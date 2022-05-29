@@ -44,7 +44,7 @@ interface Location {
 const LocationData: Location[] = [
   {
     name: "Farnesina garden",
-    location: [600, 90],
+    location: [232, 482],
     items: [
       {
         image: "location1/image1.png",
@@ -62,7 +62,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Porto di Ripa Grande",
-    location: [61, 60],
+    location: [325, 638],
     items: [
       {
         image: "location2/image1.png",
@@ -84,7 +84,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Ex-Arsenale Clementino Pontificio",
-    location: [53, 70],
+    location: [295, 665],
     items: [
       {
         image: "location3/image1.jpg",
@@ -108,17 +108,31 @@ const LocationData: Location[] = [
       },
     ],
   },
+      {
+        name: "jewish ghetto",
+        location: [320, 525],
+        items: [],
+      },
+      {
+        name: "castel sant'Angelo",
+        location: [228, 364],
+        items: [],
+      }
 
 ]
 
 function MapView(props: { current: number | null, setCurrent: (x: number) => void }) {
   let {height} = useWindowDimensions();
+  let [zoomState, setZoomState] = useState({
+      scale: 1,
+      translation: {x: 0, y: 0},
+  });
   return (
-    <map_interaction.MapInteractionCSS minScale={1} maxScale={3} translationBounds={{
-      // xMin: 600 - 944,
-      // xMax: 0,
-      // yMin: height - 1169,
-      // yMax: 0,
+    <map_interaction.MapInteractionCSS value={zoomState} onChange={(value: any) => setZoomState(value)} minScale={1} maxScale={3} translationBounds={{
+      xMin: (600 - 944) * zoomState.scale,
+      xMax: 0,
+      yMin: (height - 1169) * zoomState.scale,
+      yMax: 0,
     }}>
     <div className="map-with-pointers" onClick={(event) => {
       // @ts-ignore
@@ -141,7 +155,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
         if (location.location) {
           return <img
             key={index}
-            style={{ left: location.location[0], top: location.location[1]}}
+            style={{ left: location.location[0], top: location.location[1] + 5}}
             className={className}
             src="pointer.png"
             onClick={() => props.setCurrent(index)}
