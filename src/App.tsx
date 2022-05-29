@@ -125,7 +125,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
   let {height} = useWindowDimensions();
   let [zoomState, setZoomState] = useState({
       scale: 1,
-      translation: {x: 0, y: 0},
+      translation: {x: 0, y: -450},
   });
   return (
     <map_interaction.MapInteractionCSS value={zoomState} onChange={(value: any) => setZoomState(value)} minScale={1} maxScale={3} translationBounds={{
