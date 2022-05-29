@@ -129,9 +129,9 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
   });
   return (
     <map_interaction.MapInteractionCSS value={zoomState} onChange={(value: any) => setZoomState(value)} minScale={1} maxScale={3} translationBounds={{
-      xMin: (600 - 944) * zoomState.scale,
+      xMin: 600 - 944 * zoomState.scale,
       xMax: 0,
-      yMin: (height - 1169) * zoomState.scale,
+      yMin: height - 1169 * zoomState.scale,
       yMax: 0,
     }}>
     <div className="map-with-pointers" onClick={(event) => {
