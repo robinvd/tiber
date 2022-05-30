@@ -2,7 +2,8 @@ import { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AppBar, Card, CardContent, CardMedia, CssBaseline, Drawer, Stack, ThemeOptions, Toolbar, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
@@ -36,7 +37,8 @@ interface Location {
   name: string,
   location?: [number, number],
   items: {
-    image: string,
+    image?: string,
+    audio?: string,
     text: string,
   }[],
 }
@@ -108,24 +110,29 @@ const LocationData: Location[] = [
       },
     ],
   },
+  {
+    name: "jewish ghetto",
+    location: [320, 525],
+    items: [
       {
-        name: "jewish ghetto",
-        location: [320, 525],
-        items: [],
-      },
-      {
-        name: "castel sant'Angelo",
-        location: [228, 364],
-        items: [],
+        audio: "/example.mp3",
+        text: "test text",
       }
+    ],
+  },
+  {
+    name: "castel sant'Angelo",
+    location: [228, 364],
+    items: [],
+  }
 
 ]
 
 function MapView(props: { current: number | null, setCurrent: (x: number) => void }) {
-  let {height} = useWindowDimensions();
+  let { height } = useWindowDimensions();
   let [zoomState, setZoomState] = useState({
-      scale: 1,
-      translation: {x: 0, y: -450},
+    scale: 1,
+    translation: { x: 0, y: -450 },
   });
   return (
     <map_interaction.MapInteractionCSS value={zoomState} onChange={(value: any) => setZoomState(value)} minScale={1} maxScale={3} translationBounds={{
@@ -134,56 +141,56 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
       yMin: height - 1169 * zoomState.scale,
       yMax: 0,
     }}>
-    <div className="map-with-pointers" onClick={(event) => {
-      // @ts-ignore
-      const target = event.target.closest('.map-with-pointers');
-      // @ts-ignore
-      const {left, top} = target.getBoundingClientRect();
-      const x = event.clientX - left;
-      const y = event.clientY - top;
+      <div className="map-with-pointers" onClick={(event) => {
+        // @ts-ignore
+        const target = event.target.closest('.map-with-pointers');
+        // @ts-ignore
+        const { left, top } = target.getBoundingClientRect();
+        const x = event.clientX - left;
+        const y = event.clientY - top;
 
-      console.log(Math.round(x - 25), Math.round(y - 50));
-    }}>
-      <div className="map-img">
-        <img src="map.png" />
+        console.log(Math.round(x - 25), Math.round(y - 50));
+      }}>
+        <div className="map-img">
+          <img src="map.png" />
+        </div>
+        {(LocationData.map((location, index) => {
+          let className = "pointer-img"
+          if (index === props.current) {
+            className += " active"
+          }
+          if (location.location) {
+            return <img
+              key={index}
+              style={{ left: location.location[0], top: location.location[1] + 5 }}
+              className={className}
+              src="pointer.png"
+              onClick={() => props.setCurrent(index)}
+            />
+          } else {
+            return ''
+          }
+        }))}
       </div>
-      {(LocationData.map((location, index) => {
-        let className = "pointer-img"
-        if (index === props.current) {
-          className += " active"
-        }
-        if (location.location) {
-          return <img
-            key={index}
-            style={{ left: location.location[0], top: location.location[1] + 5}}
-            className={className}
-            src="pointer.png"
-            onClick={() => props.setCurrent(index)}
-          />
-        } else {
-          return ''
-        }
-      }))}
-    </div>
     </map_interaction.MapInteractionCSS>
   )
 }
 
 function InfoView(props: { current: number | null, next: () => void }) {
-  if (props.current === null) {
-    return <Card>
-      <TwitterTimelineEmbed
-        sourceType="profile" screenName="ciaotevere"
-        autoHeight={false}
-        noHeader={true}
-        noFooter={true}
-        noScrollbar={true}
-      />
-    </Card>
-  }
-
   return (
     <Fragment>
+      {props.current === null ?
+        <Card>
+          <TwitterTimelineEmbed
+            sourceType="profile" screenName="ciaotevere"
+            autoHeight={false}
+            noHeader={true}
+            noFooter={true}
+            noScrollbar={true}
+          />
+        </Card>
+        : undefined
+        }
       {LocationData.map((location, index) =>
         <Stack key={index} spacing={3} sx={{ display: props.current === index ? 'initial' : 'none' }}>
           <Typography variant="h4">
@@ -191,20 +198,27 @@ function InfoView(props: { current: number | null, next: () => void }) {
           </Typography>
           {location.items.map((item, index) =>
             <Card key={index} sx={{ maxWidth: 500 }} elevation={3}>
-              <CardMedia
+              {item.image ? <CardMedia
                 component="img"
                 src={item.image}
                 alt="green iguana"
-              />
+              />: undefined}
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
                   {item.text}
                 </Typography>
+                {item.audio ?
+                  <AudioPlayer
+                    src={item.audio}
+                    onError={(e) => console.log(e)}
+                    // autoPlay={true}
+                    showSkipControls={false}
+                    showJumpControls={false}
+                    hasDefaultKeyBindings={false}
+                  />
+                  : undefined
+                }
               </CardContent>
-              {/* <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-              </CardActions> */}
             </Card>
           )}
         </Stack>
