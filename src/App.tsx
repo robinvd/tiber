@@ -130,7 +130,7 @@ const LocationData: Location[] = [
     location: [320, 525],
     items: [
       {
-        text: "The jewish ghetto was founded in 1555 under the authority of the Pope Paul IV.  The walls enclosing the ghetto went from the Portico d’Ottavia to the Ponte Fabricio, through Piazza Guide e Vicolo Cenci, for a total area of three hectares. The living conditions were very bad, the area being regularly flooded by the Tiber and overcrowded. The ghetto has been temporarily abolished during the Napolean occupation, but was restored with the comeback of the Papal State. The inhabitants of the ghetto had to wait 1888 to see the definitive demolition of the ghetto walls and the end of the controlling laws.",
+        text: "The Jewish ghetto was founded in 1555 under the authority of the Pope Paul IV.  The walls enclosing the ghetto went from the Portico d’Ottavia to the Ponte Fabricio, through Piazza Guide e Vicolo Cenci, for a total area of three hectares. The living conditions were very bad, the area being regularly flooded by the Tiber and overcrowded. The ghetto has been temporarily abolished during the Napolean occupation, but was restored with the comeback of the Papal State. The inhabitants of the ghetto had to wait 1888 to see the definitive demolition of the ghetto walls and the end of the controlling laws.",
       },
       {
         image: "ghetto/image1.jpg",
