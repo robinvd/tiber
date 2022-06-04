@@ -11,6 +11,8 @@ import useWindowDimensions from './utils';
 
 const map_interaction = require('react-map-interaction');
 
+const drawerWidth = 'min(944px, 50vw)';
+
 const themeOptions: ThemeOptions = {
   palette: {
     primary: {
@@ -46,7 +48,7 @@ interface Location {
 const LocationData: Location[] = [
   {
     name: "Farnesina garden",
-    location: [232, 482],
+    location: [216, 489],
     items: [
       {
         image: "location1/image1.png",
@@ -132,7 +134,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
   let { height } = useWindowDimensions();
   let [zoomState, setZoomState] = useState({
     scale: 1,
-    translation: { x: 0, y: -450 },
+    translation: { x: 0, y: - (1169 - height) / 2 },
   });
   return (
     <map_interaction.MapInteractionCSS value={zoomState} onChange={(value: any) => setZoomState(value)} minScale={1} maxScale={3} translationBounds={{
@@ -226,8 +228,6 @@ function InfoView(props: { current: number | null, next: () => void }) {
     </Fragment>
   );
 }
-
-const drawerWidth = 600;
 
 function App() {
   let [current, setCurrent] = useState<number | null>(null)
