@@ -41,7 +41,7 @@ interface Location {
   items: {
     image?: string,
     audio?: string,
-    text: string,
+    text: string | string[],
   }[],
 }
 
@@ -78,12 +78,16 @@ const LocationData: Location[] = [
       },
       {
         image: "location2/image3.jpg",
-        text: "1750 The life on the harbor and the San Michele hospice.",
+        text: "1750 The life on the harbor and the San Michele hospice. Engraving by Giovanni Battista Piranesi",
       },
       {
         image: "location2/image4.png",
         text: "1888 Photography of the harbor and its lighthouse.",
       },
+      {
+        image: "location2/image5.jpeg",
+        text: "our intervention",
+      }
     ],
   },
   {
@@ -110,25 +114,83 @@ const LocationData: Location[] = [
         image: "location3/image5.jpg",
         text: "As can be seen in a photo from the 70s, Arsenal used to be a warehouse as a repair shop. Today, it is preparing to host the Quadrianale Roma as an exhibition space. Before the Arsenal, it was once used as a warehouse for art. in 1798 as a warehouse for works of art stolen by the French from Napoleon, before sending them to France.",
       },
+      {
+        image: "location3/image6.jpg",
+        text: "our intervention",
+      },
+      {
+        image: "location3/image7.png",
+        text: "",
+      },
+
     ],
   },
   {
-    name: "jewish ghetto",
+    name: "Ghetto ebraico",
     location: [320, 525],
     items: [
       {
-        audio: "/example.mp3",
-        text: "test text",
-      }
+        text: "The jewish ghetto was founded in 1555 under the authority of the Pope Paul IV.  The walls enclosing the ghetto went from the Portico d’Ottavia to the Ponte Fabricio, through Piazza Guide e Vicolo Cenci, for a total area of three hectares. The living conditions were very bad, the area being regularly flooded by the Tiber and overcrowded. The ghetto has been temporarily abolished during the Napolean occupation, but was restored with the comeback of the Papal State. The inhabitants of the ghetto had to wait 1888 to see the definitive demolition of the ghetto walls and the end of the controlling laws.",
+      },
+      {
+        image: "ghetto/image1.jpg",
+        text: "1752 View of the Piazza Giudea Drawing by Giuseppe Vasi",
+      },
+      {
+
+        image: "ghetto/image2.png",
+        text: "1850 - 1880 The houses of the Via della Fiumara aggettanti sun Tevere Photography(Communal Archives) ",
+      },
+      {
+        image: "ghetto/image3.png",
+        text: "1887 Il Portico d'Ottavia Drawing form E.Roesler Franz",
+      },
+      {
+        image: "ghetto/image4.png",
+        text: "Ricostruzione planimetrica del Ghetto ebraico Estratto da Il Ghetto - Benocci e Guidoni, 1993",
+      },
+      {
+        image: "ghetto/image5.jpg",
+        text: ["Our intervention is situated on a more sensitive and cultural level. The idea is to recall the relationship that existed between the houses of the ghetto and the Tevere. Indeed, some houses had a boat entrance at the water level and were thus directly connected with the river. We suggest to use the surface of the levees to implement an artwork evoking the lost relationship between neighborhood and river.",
+          "This visualisation of a possible intervention is based on an artwork made by Gert Sennema for the Jewish street in Groningen, the Netherlands.For this intervention we would ask Jewish artists to create art based on the heritage of the Ghetto."]
+      },
     ],
   },
   {
     name: "castel sant'Angelo",
     location: [228, 364],
     items: [],
-  }
-
+  },
+  {
+    name: "Mattatoio di Testaccio",
+    location: [265, 775],
+    items: [
+      {
+        text:  "The Mattatoio di Testaccio (slaughterhouse) has been planned and realized in 1889 by the architect Gioacchino Ersoch. This establishment substituted the slaughterhouses situated at the actual Piazza del Popolo, that had to be closed because they occasioned serious pollution of the water. The new Mattatoio was, at the time, one of the more modern slaughterhouse of Europe. They have been closed in 1975 and are now being re-used. They are hosting a popular music school, the MACRO museum and the Architecture Departement of the university Roma Tre."
+      },
+      {
+        image: "mattatoio/image1.jpg",
+        text: "1888 Project of the Mattatoio di Testaccio Drawings by Gioacchino Ersoch",
+      },
+      {
+        image: "mattatoio/image2.jpg",
+        text: "1891 View of the slaughterhouse shortly after the construction Photography(Archivo Urbano Testaccio) ",
+      },
+      {
+        image: "mattatoio/image3.png",
+        text: "2015 View of the Caffè Tevere, small bar located in the enclosure wall of the Mattatoio and meeting point of the students Photography by Marco Foschi",
+      },
+      {
+        image: "mattatoio/Mattatoio_intervention.jpg",
+        text: "Our intervention proposes to re-value the parking space situated between the Mattatoio and the Tevere, together with the Lungotevere Testaccio. The parking area becomes a piazza and connects itself to the new green, pedestrian and cyclist friendly promenade. The Caffè Tevere plays the role of an activator for this new urban context.",
+      },
+    ],
+  },
 ]
+
+function getTexts(item: string | string[]): string[] {
+  return (typeof item == 'string') ? [item] : item;
+}
 
 function MapView(props: { current: number | null, setCurrent: (x: number) => void }) {
   let { height } = useWindowDimensions();
@@ -182,17 +244,30 @@ function InfoView(props: { current: number | null, next: () => void }) {
   return (
     <Fragment>
       {props.current === null ?
-        <Card>
-          <TwitterTimelineEmbed
-            sourceType="profile" screenName="ciaotevere"
-            autoHeight={false}
-            noHeader={true}
-            noFooter={true}
-            noScrollbar={true}
-          />
-        </Card>
+        <Stack spacing={3}>
+          <Card sx={{ maxWidth: 500 }} elevation={3}>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Welcome to “Project Ciao Tevere”!
+              </Typography>
+              <Typography>
+                On this website, you will find marked spots on the map along the river Tiber in Rome that will bring you face to (digital)face with heritage. Do you want to explore the heritage of the river? Go ahead and click on one of the points, the website will show you, in chronological order, the changes that the river and the urban fabric went through. For the full experience, go for a walk along the Tiber and explore the points at the geographical location and try to envision the heritage (or maybe there is still evidence of it?!). Some of the spots on the maps have, as a final slide,  a visualisation that this project proposes for an intervention. The goal of the intervention is to make a connection between the heritage and nowadays Tiber. Feel free to share your experience with the project and use @projectciaotevere on Twitter to be featured on the website!
+                Go and explore!
+              </Typography>
+            </CardContent>
+          </Card>
+          <Card>
+            <TwitterTimelineEmbed
+              sourceType="profile" screenName="ciaotevere"
+              autoHeight={false}
+              noHeader={true}
+              noFooter={true}
+              noScrollbar={true}
+            />
+          </Card>
+        </Stack>
         : undefined
-        }
+      }
       {LocationData.map((location, index) =>
         <Stack key={index} spacing={3} sx={{ display: props.current === index ? 'initial' : 'none' }}>
           <Typography variant="h4">
@@ -204,11 +279,15 @@ function InfoView(props: { current: number | null, next: () => void }) {
                 component="img"
                 src={item.image}
                 alt="green iguana"
-              />: undefined}
+              /> : undefined}
               <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {item.text}
-                </Typography>
+                <Box>
+                  {getTexts(item.text).map((text, index) =>
+                    <Typography key={index} variant="body2" color="text.secondary">
+                      {text}
+                    </Typography>
+                  )}
+                </Box>
                 {item.audio ?
                   <AudioPlayer
                     src={item.audio}
