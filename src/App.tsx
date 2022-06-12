@@ -77,7 +77,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Ex-Arsenale Clementino Pontificio",
-    location: [295, 665],
+    location: [291, 671],
     items: [
       {
         image: "location3/image1.jpg",
@@ -297,7 +297,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Emporium",
-    location: [310, 672],
+    location: [314, 668],
     items: [
       {
         text: "The Testaccio part of the roman initiative of a diffused museum – starts at the excavated part of the Roman Emporio – Rome’s second big port structure built between the 1st and 2nd century BC to replace the Port Tiberinus at the Foro Boario. Facilities for the storage and preservation of goods comprised the part of the new building complex overlooking the river - it is them that visitors can see nowadays. Any deliveries made at the ancient port in Ostia would arrive at Emporium to be redistributed throughout the city. After the fall of Rome, the area lost its function (which was taken on by the Porto di Ripa Grande) and slowly became rural, being used instead as a recreational space and more importantly for vineyards and vegetable gardens. It was in the 19th century that plans were first made to rebuild this part of Rome. The zone was used for industrial and residential buildings, of which nowadays only the latter remain still in use. If one wanders along the path of the diffused museum they can see some remains of the Emporium, including the arch of St. Lazzaro, thought to have been a part of a warehouse."
