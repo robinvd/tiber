@@ -142,13 +142,45 @@ const LocationData: Location[] = [
     ],
   },
   {
-    name: "castel sant'Angelo",
+    name: "Castello di St. Angelo",
     location: [228, 364],
     items: [
       {
         text: "",
         audio: "castel.mp4",
-      }
+      },
+      {
+        text: "The Castello di Sant Angelo is a multilayered structure at the heart of which lies the Hadrian mausoleum built by imperator Hadrian between 123 and 139 A.C. It is one of the first buildings erected on the right side of the river. It was used as the resting place for the ruling imperators until 217 A.C. after which it eventually became a fortress. In the medieval ages, the structure changed hands between different important families until the Orsini. One of them became Pope Niccolò III under whose commission the Passetto di Borgo passage to the Vatican was built. From 1367 onwards, the Mausoleum became a defensive castle for the popes, even against the Napoleonic invasion. The military use of the castle stopped in 1901 when its restorations began."
+      },
+      {
+        text: "",
+        image: "castello/image1.png",
+      },
+      {
+        text: [
+          "1667 Plan of Rome by Giovanni Battista Falda",
+          "In green – the contemporary pedestrian zone, a continuation of the horticulture to the south of the now demolished bastion.  ",
+        ],
+        image: "castello/image2.png",
+      },
+      {
+        text: "1697 Plan of Rome by Antonio Barbey where the use of the waters of the Tiber for defense can be seen.",
+        image: "castello/image3.png",
+      },
+      {
+        text: [
+          "1699 Numismata pontificum Romanorum quae a tempore Martini V.usque ad annum, depiction by Filippo Buonanni ",
+          "In yellow – the part of the defensive walls that has been demolished in the construction of the Lungotevere ",
+        ],
+        image: "castello/image4.png",
+      },
+      {
+        text: [
+          "View of Piantumazione Lungotevere, pedestrian zone north of St.Angelo’s entrance",
+          "Nowadays, where two of the defensive Bastions have been destroyed, a beautiful pedestrian part has been freed to continue the historical development of opening up of the now obsolete defensive function of the mausoleum.Just as tourists can enter what was once a rather exclusive domain, they can also access a recreational free space where castle citizens might have once walked within the perimeter of the castle or outside of the city altogether.  ",
+        ],
+        image: "castello/image5.png",
+      },
     ],
   },
   {
@@ -200,11 +232,11 @@ const LocationData: Location[] = [
         text: "On the side towards the Lungotevere the palace ends with a loggia once overlooking the river, created by the Ceuli and modified by the Sacchetti, adorned with a colossal marble head (possibly Juno)[14] and two mascarons.[9] The loggia is the backdrop to a citrus garden.",
       },
       {
-        image: "palazzo/image5.jpg",
+        image: "palazzo/image5.png",
         text: "Palazzo Ricci-Sacchetti. Rome, Via Giulia 66.",
       },
       {
-        image: "palazzo/image6.png",
+        image: "palazzo/image6.jpg",
         text: "Inside view of the Nymphaeum In 1660 Carlo Rainaldi built a fine nymphaeum in the garden which is clearly visible in the Grand View of Rome.The garden had direct access to the River Tiber, but today it is almost strangled by the new street upon the high walls which were built in the 1880s to prevent floods.It regains its beauty when seen from the courtyard of the palace(photo taken during a FAI weekend).",
       },
       {
@@ -260,6 +292,27 @@ const LocationData: Location[] = [
           "esteemed guest of the Villa owner to enjoy a stroll or sit near the water.The intervention aim is to allow for seating along the water, echoing not the physical state but the activities which used to",
           "happen.Sitting opportunities would also allow visitors to enjoy the live music played on Ponte Sisto or Piazza della Fontana which remind of the Loggia and its music.",
         ]
+      },
+    ],
+  },
+  {
+    name: "Emporium",
+    location: [310, 672],
+    items: [
+      {
+        text: "The Testaccio part of the roman initiative of a diffused museum – starts at the excavated part of the Roman Emporio – Rome’s second big port structure built between the 1st and 2nd century BC to replace the Port Tiberinus at the Foro Boario. Facilities for the storage and preservation of goods comprised the part of the new building complex overlooking the river - it is them that visitors can see nowadays. Any deliveries made at the ancient port in Ostia would arrive at Emporium to be redistributed throughout the city. After the fall of Rome, the area lost its function (which was taken on by the Porto di Ripa Grande) and slowly became rural, being used instead as a recreational space and more importantly for vineyards and vegetable gardens. It was in the 19th century that plans were first made to rebuild this part of Rome. The zone was used for industrial and residential buildings, of which nowadays only the latter remain still in use. If one wanders along the path of the diffused museum they can see some remains of the Emporium, including the arch of St. Lazzaro, thought to have been a part of a warehouse."
+      },
+      {
+        text: "1901 Forma Urbis by Rodolfo Lanciani, reconstruction of the plan of Emporium. The yellow mark corresponds to the location of the diffused museum. Another important part of the complex, the Portico Aemilia, surved as a distributions centre for the goods entering the port and stretched for almost 500 m. A part of it is still visible in the building block between via Florio, via Giovanni Branca and via Rubattino. A hypothesis as to why it isn’t directly adjacent to the Emporio is that the distance helped mitigate the damages of seasonal flooding which the Emporio on the other hand was susceptible to. It was probably the raging Tiber waters that prompted most of the inner restructuring of the port during its operational time.",
+        image: "emporium/image1.png"
+      },
+      {
+        text: "Photograph taken during the excavation process in the XX century, the source is Info.roma.it",
+        image: "emporium/image2.png"
+      },
+      {
+        text: "The excavated site today, photograph taken from Info.roma.it . The museum is only open on specific occasions.",
+        image: "emporium/image3.png"
       },
     ],
   },
