@@ -47,27 +47,12 @@ interface Location {
 
 const LocationData: Location[] = [
   {
-    name: "Farnesina garden",
-    location: [216, 489],
-    items: [
-      {
-        image: "location1/image1.png",
-        text: "You are standing in front of the gardens of Villa Farnesina-Chigi. Originally built outside of the city walls by the Sienese banker Agostino Chigi, the villa and its gardens passed into the possession of the Farnese family in 1579. The Farnese family already owned a neighboring plot which was subsequently combined with the original Chigi one. Nowadays the main rooms of the villa are open to visitors and it accomodates the Accademia dei Lincei - a Roman academy of sciences. The pictures below show how the villa and the banks looked before the construction of the Lungotevere and the new river banks in the 19. century. Our intervention draws on the history of the vividarium(”pleasure garden”) and the loggias that overlooked the river in the past, making use of the new urban situation.The reconstruction of the banks opened up the strip between Ponte Mazzoni and Ponte Sisto - one no longer needs to be an esteemed guest of the Villa owner to enjoy a stroll near the water.Inspired by the idea of a vividarium and the new element of accessability we aim to improve the accessability to the banks and to llow for seating along the water, echoing not the physical state but the acticities which used to happen.Sitting opportunities would also allow visitors to enjoy the live music played on Ponte Sisito or Piazza della Fontana which remind of the Loggia and its music. On the left: A map of the Villa’s gardens by C.Frommel.Marked in green is the original lot of Agostino Chigi, in white the lot of the Farnese family. Numbers 6 and 11 demarc loggias. On the left: a view of Ponte Sisto and the Villa Farnesina lot by G.Vasi in the XVIII century.Marked in red is one of two loggias looking over the river where the Farnese family used to organize fests.Today it has been demolished along with a big portion of the gardens of the Villa. About the drawings: Giuseppe Vasi was a Sicilian artist who moved to Rome early on in his career and is most famous for his series of etchings depicting Rome published between 1743 and 1771. Today they constitute an important historical source on 18th century Rome.",
-      },
-      {
-        image: "location1/image2.png",
-        text: "In yellow: the demoloished part of the coast between Ponte Mazzini and Ponte Sisto About the map: The Forma Urbis was a series of maps produced by the Italian archeologist Rodolfo Lanciani between 1893 and 1901 and contains a juxtaposition of contemporaneous buildings and roads(in red) with known roman ruins dating up to the VI century.AD. (in black).Visible in light blue is the percourse of the Lungotevere street of today.",
-      },
-      {
-        image: "location1/image3.png",
-        text: "In red - the new percourse of the Lungotevere, in green the banks next to the waterline About the map: The Nolli plan of 1748 is the first accurate modern cartography of Rome.",
-      },
-    ],
-  },
-  {
     name: "Porto di Ripa Grande",
     location: [325, 638],
     items: [
+      {
+        text: "The Porto Fluviale di Ripa Grande was build in 1692 and used to be the main harbor of the city.In 1901, during the construction of the levees, the harbor and its two lighthouses is destroyed.Today, its former presence is only witnessed in the toponymy of the place and in the reconstruction of the two ramps that used to lead down to the water level.",
+      },
       {
         image: "location2/image1.png",
         text: "1625 The fluvial transport of the city in the region of Porta Portes, before the construction of the Ripa Grande harbor. Drawing by Giovanni Maggi",
@@ -86,7 +71,7 @@ const LocationData: Location[] = [
       },
       {
         image: "location2/image5.jpeg",
-        text: "our intervention",
+        text: "Our intervention is based on the presence of the elevated promenade along the San Michele hospice and seeks to develop its potential. The promenade is reconnected to its history through a symbolic figure of the port, the lighthouse. The platform marking the site of the former lighthouse is used to host a café that extend to the outside and pulses along the promenade. In addition, a shade structure and street furniture are added, so that the promenade can be, again, a place where people meet, exchange news and stay.",
       }
     ],
   },
@@ -159,14 +144,19 @@ const LocationData: Location[] = [
   {
     name: "castel sant'Angelo",
     location: [228, 364],
-    items: [],
+    items: [
+      {
+        text: "",
+        audio: "castel.mp4",
+      }
+    ],
   },
   {
     name: "Mattatoio di Testaccio",
     location: [265, 775],
     items: [
       {
-        text:  "The Mattatoio di Testaccio (slaughterhouse) has been planned and realized in 1889 by the architect Gioacchino Ersoch. This establishment substituted the slaughterhouses situated at the actual Piazza del Popolo, that had to be closed because they occasioned serious pollution of the water. The new Mattatoio was, at the time, one of the more modern slaughterhouse of Europe. They have been closed in 1975 and are now being re-used. They are hosting a popular music school, the MACRO museum and the Architecture Departement of the university Roma Tre."
+        text: "The Mattatoio di Testaccio (slaughterhouse) has been planned and realized in 1889 by the architect Gioacchino Ersoch. This establishment substituted the slaughterhouses situated at the actual Piazza del Popolo, that had to be closed because they occasioned serious pollution of the water. The new Mattatoio was, at the time, one of the more modern slaughterhouse of Europe. They have been closed in 1975 and are now being re-used. They are hosting a popular music school, the MACRO museum and the Architecture Departement of the university Roma Tre."
       },
       {
         image: "mattatoio/image1.jpg",
@@ -183,6 +173,93 @@ const LocationData: Location[] = [
       {
         image: "mattatoio/Mattatoio_intervention.jpg",
         text: "Our intervention proposes to re-value the parking space situated between the Mattatoio and the Tevere, together with the Lungotevere Testaccio. The parking area becomes a piazza and connects itself to the new green, pedestrian and cyclist friendly promenade. The Caffè Tevere plays the role of an activator for this new urban context.",
+      },
+    ],
+  },
+  {
+    name: "Palazzo Ricci-Sacchetti",
+    location: [265, 775], // ??
+    items: [
+      {
+        image: "plazzo/image1.png",
+        text: [
+          "Frescoes, gilded globes and immersion into 16th-century architecture are some of the highlights of Rome’s centrally located Palazzo Sacchetti. Constructed as part of one of the city’s first urban planning projects, the late Renaissance building is located on the cobblestoned Via Giulia near the banks of the Tiber River.",
+          "In 1754 Giuseppe Vasi published his fourth book of etchings with views of Roman monuments. It covered the main palaces and the most renowned streets. This view of Palazzo Sacchetti is actually a view of Via Giulia",
+        ]
+      },
+      {
+        image: "plazzo/image2.png",
+        text: "Palazzo Sacchetti is a palazzo in Rome, important for historical and artistic reasons. The building was designed and owned by Antonio da Sangallo the Younger and completed by Nanni di Baccio Bigio or his son Annibale Lippi.After Sangallo, the palace belonged among others to the Ricci, Ceoli and Sacchetti, important families of the Roman nobility.",
+      },
+      {
+        image: "plazzo/image3.png",
+        text: "We know the origins of the palace thanks to some sketches preserved at present in the Uffizi, but also to a passage in Le Vitedel Vasari: 'he refounded again in Rome, to defend himself from the floods when the Tiber swells, his house in strada Giulia.",
+      },
+      {
+        image: "plazzo/image4.jpg",
+        text: "On the side towards the Lungotevere the palace ends with a loggia once overlooking the river, created by the Ceuli and modified by the Sacchetti, adorned with a colossal marble head (possibly Juno)[14] and two mascarons.[9] The loggia is the backdrop to a citrus garden.",
+      },
+      {
+        image: "plazzo/image5.jpg",
+        text: "Palazzo Ricci-Sacchetti. Rome, Via Giulia 66.",
+      },
+      {
+        image: "plazzo/image6.png",
+        text: "Inside view of the Nymphaeum In 1660 Carlo Rainaldi built a fine nymphaeum in the garden which is clearly visible in the Grand View of Rome.The garden had direct access to the River Tiber, but today it is almost strangled by the new street upon the high walls which were built in the 1880s to prevent floods.It regains its beauty when seen from the courtyard of the palace(photo taken during a FAI weekend).",
+      },
+      {
+        image: "plazzo/image7.png",
+        text: "A landscaping arrangement reminding of the lemon groves stretching towards Tevere; by creating a seating area",
+      },
+
+    ],
+  },
+  {
+    name: "Farnesina Angelo Emporium",
+    location: [236, 509], // ??
+    items: [
+      {
+        text: "Villa Farnesina-Chigi was originally built outside of the city walls by the Sienese banker Agostino Chigi, and passed into the possession of the Farnese family in 1579. The Farnese family already owned a neighboring plot which was subsequently combined with the original Chigi one. Nowadays the main rooms of the villa are open to visitors and it accommodates the Accademia dei Lincei – a Roman academy of sciences.",
+      },
+      {
+        image: "farnesina/image1.png",
+        text: "XVIII century view of the Vila, etching by G. Vasi – the Villa’s gardens overlooked the river directly.",
+      },
+      {
+        image: "farnesina/image2.png",
+        text: [
+          "On the left: A map of the Villa’s gardens by C. Frommel. Marked in green is the original lot of Agostino Chigi, in white the lot of the Farnese family.",
+          "Numbers 6 and 11 demark loggias.",
+          "On the right: a view of Ponte Sisto and the Villa Farnesina lot by G.Vasi in the XVIII century.Marked in red is one of two loggias looking over the ",
+          "river where the Farnese family used to organize fests.Today it has been demolished along with a big portion of the gardens of the Villa.",
+        ]
+      },
+      {
+        image: "farnesina/image3.png",
+        text: [
+          "1988, Forma Urbis from Rudolfo Lanciani – a comprehensive study of the whereabouts of ancient roman remains under modern day Rome",
+          "In yellow - the demolished part of the coast between Ponte Mazzini and Ponte Sisto,",
+          "In red - contemporaneous buildings and roads,",
+          "In black - Known roman ruins dating up to the VI century.AD.",
+          "Visible in light blue is the course of the Lungotevere street of today.",
+        ],
+      },
+      {
+        image: "farnesina/image4.png",
+        text: [
+          "1748 Nolli plan of Rome.",
+          "In red - the new percourse of the Lungotevere, in green - the banks next to the waterline.",
+          "About the map: The Nolli plan of 1748 is the first accurate modern cartography of Rome. ",
+        ],
+      },
+      {
+        image: "farnesina/image5.png",
+        text: [
+          "The proposed intervention draws on the history of the vividarium(”pleasure garden”) and the loggias that overlooked the river in the past, making use of the ",
+          "new urban situation.The reconstruction of the banks opened up the strip between Ponte Mazzoni and Ponte Sisto to the wide public - one no longer needs to be an",
+          "esteemed guest of the Villa owner to enjoy a stroll or sit near the water.The intervention aim is to allow for seating along the water, echoing not the physical state but the activities which used to",
+          "happen.Sitting opportunities would also allow visitors to enjoy the live music played on Ponte Sisto or Piazza della Fontana which remind of the Loggia and its music.",
+        ]
       },
     ],
   },
