@@ -210,7 +210,7 @@ const LocationData: Location[] = [
   },
   {
     name: "Palazzo Ricci-Sacchetti",
-    location: [265, 775], // ??
+    location: [190, 427],
     items: [
       {
         image: "palazzo/image1.png",
