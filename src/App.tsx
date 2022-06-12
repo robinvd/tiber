@@ -51,19 +51,19 @@ const LocationData: Location[] = [
     location: [325, 638],
     items: [
       {
-        text: "The Porto Fluviale di Ripa Grande was build in 1692 and used to be the main harbor of the city.In 1901, during the construction of the levees, the harbor and its two lighthouses is destroyed.Today, its former presence is only witnessed in the toponymy of the place and in the reconstruction of the two ramps that used to lead down to the water level.",
+        text: "The Porto Fluviale di Ripa Grande was build in 1692 and used to be the main harbor of the city. In 1901, during the construction of the levees, the harbor and its two lighthouses were destroyed. Today, its former presence is only witnessed in the toponymy of the place and in the reconstruction of the two ramps that used to lead down to the water level.",
       },
       {
         image: "location2/image1.png",
-        text: "1625 The fluvial transport of the city in the region of Porta Portes, before the construction of the Ripa Grande harbor. Drawing by Giovanni Maggi",
+        text: "1625 The fluvial transport of the city in the region of Porta Portes, before the construction of the Ripa Grande harbor. Drawing by Giovanni Maggi.",
       },
       {
         image: "location2/image2.jpg",
-        text: "1711 The harbor and its surroundings before the construction of the Ospizio di San Michele. Painting by Gaspar van Wittel",
+        text: "1711 The harbor and its surroundings before the construction of the Ospizio di San Michele. Painting by Gaspar van Wittel.",
       },
       {
         image: "location2/image3.jpg",
-        text: "1750 The life on the harbor and the San Michele hospice. Engraving by Giovanni Battista Piranesi",
+        text: "1750 The life on the harbor and the San Michele hospice. Engraving by Giovanni Battista Piranesi.",
       },
       {
         image: "location2/image4.png",
@@ -81,15 +81,15 @@ const LocationData: Location[] = [
     items: [
       {
         image: "location3/image1.jpg",
-        text: "Pope Clement XI built the new papal arsenal, intended for the maintenance of the river boats, as well as the commercial papal ships. Its position just outside the excise city wall can be explained with the purpose to reduce the fiscal pressure on the materials used in maintenance activities. 1754- Represents the view of the Port of Ripa Grande ; Arsenale Pontificio on the Tiber in Rome with the Aventine on the right.",
+        text: "Pope Clement XI built the new papal arsenal, intended for the maintenance of the river boats, as well as the commercial papal ships. Its position just outside the excise city wall can be explained with the purpose to reduce the fiscal pressure on the materials used in maintenance activities. 1754 Represents the view of the Port of Ripa Grande; Arsenale Pontificio on the Tiber in Rome with the Aventine on the right.",
       },
       {
         image: "location3/image2.jpg",
-        text: "Flood of 1915",
+        text: "Flood of 1915.",
       },
       {
         image: "location3/image3.jpg",
-        text: "The launch of the pirodaga built in 1842 in the papal arsenals of Ripa Grande.It took place on November 30, 1842 in the river cantıere built by Gregory 16. out of porta portese",
+        text: "The launch of the pirodaga built in 1842 in the papal arsenals of Ripa Grande. It took place on November 30, 1842 in the river cantıere built by Gregory 16 out of Porta Portese.",
       },
       {
         image: "location3/image4.png",
@@ -119,25 +119,27 @@ const LocationData: Location[] = [
       },
       {
         image: "ghetto/image1.jpg",
-        text: "1752 View of the Piazza Giudea Drawing by Giuseppe Vasi",
+        text: "1752 View of the Piazza Giudea Drawing by Giuseppe Vasi.",
       },
       {
 
         image: "ghetto/image2.png",
-        text: "1850 - 1880 The houses of the Via della Fiumara aggettanti sun Tevere Photography(Communal Archives) ",
+        text: "1850 - 1880 The houses of the Via della Fiumara aggettanti sun Tevere Photography (Communal Archives). ",
       },
       {
         image: "ghetto/image3.png",
-        text: "1887 Il Portico d'Ottavia Drawing form E.Roesler Franz",
+        text: "1887 Il Portico d'Ottavia Drawing form E. Roesler Franz.",
       },
       {
         image: "ghetto/image4.png",
-        text: "Ricostruzione planimetrica del Ghetto ebraico Estratto da Il Ghetto - Benocci e Guidoni, 1993",
+        text: "Ricostruzione planimetrica del Ghetto ebraico Estratto da Il Ghetto - Benocci e Guidoni, 1993.",
       },
       {
         image: "ghetto/image5.jpg",
-        text: ["Our intervention is situated on a more sensitive and cultural level. The idea is to recall the relationship that existed between the houses of the ghetto and the Tevere. Indeed, some houses had a boat entrance at the water level and were thus directly connected with the river. We suggest to use the surface of the levees to implement an artwork evoking the lost relationship between neighborhood and river.",
-          "This visualisation of a possible intervention is based on an artwork made by Gert Sennema for the Jewish street in Groningen, the Netherlands.For this intervention we would ask Jewish artists to create art based on the heritage of the Ghetto."]
+        text: [
+          "Our intervention is situated on a more sensitive and cultural level. The idea is to recall the relationship that existed between the houses of the ghetto and the Tevere. Indeed, some houses had a boat entrance at the water level and were thus directly connected with the river. We suggest to use the surface of the levees to implement an artwork evoking the lost relationship between neighborhood and river.",
+          "This visualisation of a possible intervention is based on an artwork made by Gert Sennema for the Jewish street in Groningen, the Netherlands. For this intervention we would ask Jewish artists to create art based on the heritage of the Ghetto."
+        ]
       },
     ],
   },
@@ -146,8 +148,11 @@ const LocationData: Location[] = [
     location: [228, 364],
     items: [
       {
-        text: "The Castello di Sant Angelo is a multilayered structure at the heart of which lies the Hadrian mausoleum built by imperator Hadrian between 123 and 139 A.D. It is one of the first buildings erected on the right side of the river. It was used as the resting place for the ruling imperators until 217 A.D. after which it eventually became a fortress. In the medieval ages, the structure changed hands between different important families until the Orsini. One of them became Pope Niccolò III under whose commission the Passetto di Borgo passage to the Vatican was built. From 1367 onwards, the Mausoleum became a defensive castle for the popes, even against the Napoleonic invasion. The military use of the castle stopped in 1901 when its restorations began.",
+        text: "",
         audio: "castel.mp4",
+      },
+      {
+        text: "The Castello di Sant Angelo is a multilayered structure at the heart of which lies the Hadrian mausoleum built by imperator Hadrian between 123 and 139 A.D. It is one of the first buildings erected on the right side of the river. It was used as the resting place for the ruling imperators until 217 A.D. after which it eventually became a fortress. In the medieval ages, the structure changed hands between different important families until the Orsini. One of them became Pope Niccolò III under whose commission the Passetto di Borgo passage to the Vatican was built. From 1367 onwards, the Mausoleum became a defensive castle for the popes, even against the Napoleonic invasion. The military use of the castle stopped in 1901 when its restorations began."
       },
       {
         text: "",
@@ -166,15 +171,15 @@ const LocationData: Location[] = [
       },
       {
         text: [
-          "1699 Numismata pontificum Romanorum quae a tempore Martini V.usque ad annum, depiction by Filippo Buonanni ",
-          "In yellow – the part of the defensive walls that has been demolished in the construction of the Lungotevere ",
+          "1699 Numismata pontificum Romanorum quae a tempore Martini V.usque ad annum, depiction by Filippo Buonanni. ",
+          "In yellow – the part of the defensive walls that has been demolished in the construction of the Lungotevere. ",
         ],
         image: "castello/image4.png",
       },
       {
         text: [
-          "View of Piantumazione Lungotevere, pedestrian zone north of St.Angelo’s entrance",
-          "Nowadays, where two of the defensive Bastions have been destroyed, a beautiful pedestrian part has been freed to continue the historical development of opening up of the now obsolete defensive function of the mausoleum.Just as tourists can enter what was once a rather exclusive domain, they can also access a recreational free space where castle citizens might have once walked within the perimeter of the castle or outside of the city altogether.  ",
+          "View of Piantumazione Lungotevere, pedestrian zone north of St. Angelo’s entrance.",
+          "Nowadays, where two of the defensive Bastions have been destroyed, a beautiful pedestrian part has been freed to continue the historical development of opening up of the now obsolete defensive function of the mausoleum. Just as tourists can enter what was once a rather exclusive domain, they can also access a recreational free space where castle citizens might have once walked within the perimeter of the castle or outside of the city altogether.  ",
         ],
         image: "castello/image5.png",
       },
@@ -189,15 +194,15 @@ const LocationData: Location[] = [
       },
       {
         image: "mattatoio/image1.jpg",
-        text: "1888 Project of the Mattatoio di Testaccio Drawings by Gioacchino Ersoch",
+        text: "1888 Project of the Mattatoio di Testaccio Drawings by Gioacchino Ersoch.",
       },
       {
         image: "mattatoio/image2.jpg",
-        text: "1891 View of the slaughterhouse shortly after the construction Photography(Archivo Urbano Testaccio) ",
+        text: "1891 View of the slaughterhouse shortly after the construction Photography (Archivo Urbano Testaccio). ",
       },
       {
         image: "mattatoio/image3.png",
-        text: "2015 View of the Caffè Tevere, small bar located in the enclosure wall of the Mattatoio and meeting point of the students Photography by Marco Foschi",
+        text: "2015 View of the Caffè Tevere, small bar located in the enclosure wall of the Mattatoio and meeting point of the students. Photography by Marco Foschi.",
       },
       {
         image: "mattatoio/Mattatoio_intervention.jpg",
@@ -213,20 +218,20 @@ const LocationData: Location[] = [
         image: "palazzo/image1.png",
         text: [
           "Frescoes, gilded globes and immersion into 16th-century architecture are some of the highlights of Rome’s centrally located Palazzo Sacchetti. Constructed as part of one of the city’s first urban planning projects, the late Renaissance building is located on the cobblestoned Via Giulia near the banks of the Tiber River.",
-          "In 1754 Giuseppe Vasi published his fourth book of etchings with views of Roman monuments. It covered the main palaces and the most renowned streets. This view of Palazzo Sacchetti is actually a view of Via Giulia",
+          "In 1754 Giuseppe Vasi published his fourth book of etchings with views of Roman monuments. It covered the main palaces and the most renowned streets. This view of Palazzo Sacchetti is actually a view of Via Giulia.",
         ]
       },
       {
         image: "palazzo/image2.png",
-        text: "Palazzo Sacchetti is a palazzo in Rome, important for historical and artistic reasons. The building was designed and owned by Antonio da Sangallo the Younger and completed by Nanni di Baccio Bigio or his son Annibale Lippi.After Sangallo, the palace belonged among others to the Ricci, Ceoli and Sacchetti, important families of the Roman nobility.",
+        text: "Palazzo Sacchetti is a palazzo in Rome, important for historical and artistic reasons. The building was designed and owned by Antonio da Sangallo the Younger and completed by Nanni di Baccio Bigio or his son Annibale Lippi. After Sangallo, the palace belonged among others to the Ricci, Ceoli and Sacchetti, important families of the Roman nobility.",
       },
       {
         image: "palazzo/image3.png",
-        text: "We know the origins of the palace thanks to some sketches preserved at present in the Uffizi, but also to a passage in Le Vitedel Vasari: 'he refounded again in Rome, to defend himself from the floods when the Tiber swells, his house in strada Giulia.",
+        text: "We know the origins of the palace thanks to some sketches preserved at present in the Uffizi, but also to a passage in Le Vitedel Vasari: 'he refounded again in Rome, to defend himself from the floods when the Tiber swells, his house in strada Giulia'.",
       },
       {
         image: "palazzo/image4.jpg",
-        text: "On the side towards the Lungotevere the palace ends with a loggia once overlooking the river, created by the Ceuli and modified by the Sacchetti, adorned with a colossal marble head (possibly Juno)[14] and two mascarons.[9] The loggia is the backdrop to a citrus garden.",
+        text: "On the side towards the Lungotevere the palace ends with a loggia once overlooking the river, created by the Ceuli and modified by the Sacchetti, adorned with a colossal marble head (possibly Juno) and two mascarons. The loggia is the backdrop to a citrus garden.",
       },
       {
         image: "palazzo/image5.png",
@@ -234,17 +239,17 @@ const LocationData: Location[] = [
       },
       {
         image: "palazzo/image6.jpg",
-        text: "Inside view of the Nymphaeum In 1660 Carlo Rainaldi built a fine nymphaeum in the garden which is clearly visible in the Grand View of Rome.The garden had direct access to the River Tiber, but today it is almost strangled by the new street upon the high walls which were built in the 1880s to prevent floods.It regains its beauty when seen from the courtyard of the palace(photo taken during a FAI weekend).",
+        text: "Inside view of the Nymphaeum In 1660 Carlo Rainaldi built a fine nymphaeum in the garden which is clearly visible in the Grand View of Rome. The garden had direct access to the River Tiber, but today it is almost strangled by the new street upon the high walls which were built in the 1880s to prevent floods. It regains its beauty when seen from the courtyard of the palace (photo taken during a FAI weekend).",
       },
       {
         image: "palazzo/image7.png",
-        text: "A landscaping arrangement reminding of the lemon groves stretching towards Tevere; by creating a seating area",
+        text: "A landscaping arrangement reminding of the lemon groves stretching towards Tevere; by creating a seating area.",
       },
 
     ],
   },
   {
-    name: "Farnesina Angelo Emporium",
+    name: "Farnesia Garden",
     location: [236, 509], // ??
     items: [
       {
@@ -259,17 +264,16 @@ const LocationData: Location[] = [
         text: [
           "On the left: A map of the Villa’s gardens by C. Frommel. Marked in green is the original lot of Agostino Chigi, in white the lot of the Farnese family.",
           "Numbers 6 and 11 demark loggias.",
-          "On the right: a view of Ponte Sisto and the Villa Farnesina lot by G.Vasi in the XVIII century.Marked in red is one of two loggias looking over the ",
-          "river where the Farnese family used to organize fests.Today it has been demolished along with a big portion of the gardens of the Villa.",
+          "On the right: a view of Ponte Sisto and the Villa Farnesina lot by G.Vasi in the XVIII century. Marked in red is one of two loggias looking over the river where the Farnese family used to organize fests. Today it has been demolished along with a big portion of the gardens of the Villa.",
         ]
       },
       {
         image: "farnesina/image3.png",
         text: [
-          "1988, Forma Urbis from Rudolfo Lanciani – a comprehensive study of the whereabouts of ancient roman remains under modern day Rome",
-          "In yellow - the demolished part of the coast between Ponte Mazzini and Ponte Sisto,",
-          "In red - contemporaneous buildings and roads,",
-          "In black - Known roman ruins dating up to the VI century.AD.",
+          "1988 Forma Urbis from Rudolfo Lanciani – a comprehensive study of the whereabouts of ancient roman remains under modern day Rome.",
+          "In yellow - the demolished part of the coast between Ponte Mazzini and Ponte Sisto.",
+          "In red - contemporaneous buildings and roads.",
+          "In black - Known roman ruins dating up to the VI century A.D.",
           "Visible in light blue is the course of the Lungotevere street of today.",
         ],
       },
@@ -284,10 +288,10 @@ const LocationData: Location[] = [
       {
         image: "farnesina/image5.png",
         text: [
-          "The proposed intervention draws on the history of the vividarium(”pleasure garden”) and the loggias that overlooked the river in the past, making use of the ",
-          "new urban situation.The reconstruction of the banks opened up the strip between Ponte Mazzoni and Ponte Sisto to the wide public - one no longer needs to be an",
-          "esteemed guest of the Villa owner to enjoy a stroll or sit near the water.The intervention aim is to allow for seating along the water, echoing not the physical state but the activities which used to",
-          "happen.Sitting opportunities would also allow visitors to enjoy the live music played on Ponte Sisto or Piazza della Fontana which remind of the Loggia and its music.",
+          "The proposed intervention draws on the history of the vividarium (”pleasure garden”) and the loggias that overlooked the river in the past, making use of the ",
+          "new urban situation. The reconstruction of the banks opened up the strip between Ponte Mazzoni and Ponte Sisto to the wide public - one no longer needs to be an",
+          "esteemed guest of the Villa owner to enjoy a stroll or sit near the water. The intervention aim is to allow for seating along the water, echoing not the physical state but the activities which used to",
+          "happen. Sitting opportunities would also allow visitors to enjoy the live music played on Ponte Sisto or Piazza della Fontana which remind of the Loggia and its music.",
         ]
       },
     ],
@@ -304,7 +308,7 @@ const LocationData: Location[] = [
         image: "emporium/image1.png"
       },
       {
-        text: "Photograph taken during the excavation process in the XX century, the source is Info.roma.it",
+        text: "Photograph taken during the excavation process in the XX century, the source is Info.roma.it.",
         image: "emporium/image2.png"
       },
       {
