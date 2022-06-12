@@ -152,10 +152,7 @@ const LocationData: Location[] = [
         audio: "castel.mp4",
       },
       {
-        text: "The Castello di Sant Angelo is a multilayered structure at the heart of which lies the Hadrian mausoleum built by imperator Hadrian between 123 and 139 A.D. It is one of the first buildings erected on the right side of the river. It was used as the resting place for the ruling imperators until 217 A.D. after which it eventually became a fortress. In the medieval ages, the structure changed hands between different important families until the Orsini. One of them became Pope Niccolò III under whose commission the Passetto di Borgo passage to the Vatican was built. From 1367 onwards, the Mausoleum became a defensive castle for the popes, even against the Napoleonic invasion. The military use of the castle stopped in 1901 when its restorations began."
-      },
-      {
-        text: "",
+        text: "The Castello di Sant Angelo is a multilayered structure at the heart of which lies the Hadrian mausoleum built by imperator Hadrian between 123 and 139 A.D. It is one of the first buildings erected on the right side of the river. It was used as the resting place for the ruling imperators until 217 A.D. after which it eventually became a fortress. In the medieval ages, the structure changed hands between different important families until the Orsini. One of them became Pope Niccolò III under whose commission the Passetto di Borgo passage to the Vatican was built. From 1367 onwards, the Mausoleum became a defensive castle for the popes, even against the Napoleonic invasion. The military use of the castle stopped in 1901 when its restorations began.",
         image: "castello/image1.png",
       },
       {
