@@ -101,7 +101,7 @@ const LocationData: Location[] = [
       },
       {
         image: "location3/image6.jpg",
-        text: "Our intervention",
+        text: "",
       },
       {
         image: "location3/image7.png",
