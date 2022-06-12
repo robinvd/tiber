@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+// import { Fragment, useEffect, useState } from 'react';
 import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
@@ -181,34 +181,34 @@ const LocationData: Location[] = [
     location: [265, 775], // ??
     items: [
       {
-        image: "plazzo/image1.png",
+        image: "palazzo/image1.png",
         text: [
           "Frescoes, gilded globes and immersion into 16th-century architecture are some of the highlights of Rome’s centrally located Palazzo Sacchetti. Constructed as part of one of the city’s first urban planning projects, the late Renaissance building is located on the cobblestoned Via Giulia near the banks of the Tiber River.",
           "In 1754 Giuseppe Vasi published his fourth book of etchings with views of Roman monuments. It covered the main palaces and the most renowned streets. This view of Palazzo Sacchetti is actually a view of Via Giulia",
         ]
       },
       {
-        image: "plazzo/image2.png",
+        image: "palazzo/image2.png",
         text: "Palazzo Sacchetti is a palazzo in Rome, important for historical and artistic reasons. The building was designed and owned by Antonio da Sangallo the Younger and completed by Nanni di Baccio Bigio or his son Annibale Lippi.After Sangallo, the palace belonged among others to the Ricci, Ceoli and Sacchetti, important families of the Roman nobility.",
       },
       {
-        image: "plazzo/image3.png",
+        image: "palazzo/image3.png",
         text: "We know the origins of the palace thanks to some sketches preserved at present in the Uffizi, but also to a passage in Le Vitedel Vasari: 'he refounded again in Rome, to defend himself from the floods when the Tiber swells, his house in strada Giulia.",
       },
       {
-        image: "plazzo/image4.jpg",
+        image: "palazzo/image4.jpg",
         text: "On the side towards the Lungotevere the palace ends with a loggia once overlooking the river, created by the Ceuli and modified by the Sacchetti, adorned with a colossal marble head (possibly Juno)[14] and two mascarons.[9] The loggia is the backdrop to a citrus garden.",
       },
       {
-        image: "plazzo/image5.jpg",
+        image: "palazzo/image5.jpg",
         text: "Palazzo Ricci-Sacchetti. Rome, Via Giulia 66.",
       },
       {
-        image: "plazzo/image6.png",
+        image: "palazzo/image6.png",
         text: "Inside view of the Nymphaeum In 1660 Carlo Rainaldi built a fine nymphaeum in the garden which is clearly visible in the Grand View of Rome.The garden had direct access to the River Tiber, but today it is almost strangled by the new street upon the high walls which were built in the 1880s to prevent floods.It regains its beauty when seen from the courtyard of the palace(photo taken during a FAI weekend).",
       },
       {
-        image: "plazzo/image7.png",
+        image: "palazzo/image7.png",
         text: "A landscaping arrangement reminding of the lemon groves stretching towards Tevere; by creating a seating area",
       },
 
