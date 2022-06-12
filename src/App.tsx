@@ -168,7 +168,7 @@ const LocationData: Location[] = [
       },
       {
         text: [
-          "1699 Numismata pontificum Romanorum quae a tempore Martini V.usque ad annum, depiction by Filippo Buonanni. ",
+          "1699 Numismata pontificum Romanorum quae a tempore Martini V. usque ad annum, depiction by Filippo Buonanni. ",
           "In yellow – the part of the defensive walls that has been demolished in the construction of the Lungotevere. ",
         ],
         image: "castello/image4.png",
