@@ -366,7 +366,7 @@ const LocationData: Location[] = [
     ]
   },
   {
-    name: "Santo Spirito in Sassia",
+    name: "Plaque of Santo Spirito in Sassia",
     color: 2,
     location: [143, 382],
     items: [
