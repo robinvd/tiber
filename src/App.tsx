@@ -415,9 +415,9 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
           if (location.location) {
             return <img
               key={index}
-              style={{ left: location.location[0], top: location.location[1] + 5, filter: location.color ? "hue-rotate(180deg)" : "" }}
+              style={{ left: location.location[0], top: location.location[1] + 5}}
               className={className}
-              src="pointer.png"
+              src={location.color ? "pointer2.png" : "pointer.png"}
               onClick={() => props.setCurrent(index)}
             />
           } else {
