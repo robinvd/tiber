@@ -45,7 +45,7 @@ interface Location {
   }[],
 }
 
-const soundText = "The project “The sound of Tevere” by Celia Garrido, Eleni Dimakou, Leonie Cozzolino and Nina Pravst, deals with the relationship between the urban space at the top of the river walls and the banks directly by the water. The group has collected the sounds of the city life “above” and intends to play it at water level at chosen points, allowing it to mix with the natural sound of the water. Thereby they bring together two parts of the river experience, create an immaterial connection between the two altitude levels. Here you hear the sounds recorded on street level. To get the full experience, take a walk in front of Castello St. Angelo!"
+const soundText = "The project “The sound of Tevere” by Celia Garrido, Eleni Dimakou, Leonie Cozzolino and Nina Pravst, deals with the relationship between the urban space at the top of the river walls and the banks directly by the water. The group has collected the sounds of the city life “above” and intends to play it at water level at chosen points, allowing it to mix with the natural sound of the water. Thereby they bring together two parts of the river experience, create an immaterial connection between the two altitude levels. Here you hear the sounds recorded on street level. To get the full experience, take a walk along the Tiber!"
 
 const LocationData: Location[] = [
   {
