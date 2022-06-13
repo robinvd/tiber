@@ -45,6 +45,8 @@ interface Location {
   }[],
 }
 
+const soundText = "The project “The sound of Tevere” by Celia Garrido, Eleni Dimakou, Leonie Cozzolino and Nina Pravst, deals with the relationship between the urban space at the top of the river walls and the banks directly by the water. The group has collected the sounds of the city life “above” and intends to play it at water level at chosen points, allowing it to mix with the natural sound of the water. Thereby they bring together two parts of the river experience, create an immaterial connection between the two altitude levels. Here you hear the sounds recorded on street level. To get the full experience, take a walk in front of Castello St. Angelo!"
+
 const LocationData: Location[] = [
   {
     name: "Porto di Ripa Grande",
@@ -101,7 +103,7 @@ const LocationData: Location[] = [
       },
       {
         image: "location3/image6.jpg",
-        text: "",
+        text: "The projection of the ship launching activity, which is the Arsenale's strong relationship with the river in the past, and the use of existing platforms to observe the wall that is the exhibition screen of the Quadrianale di Roma",
       },
       {
         image: "location3/image7.png",
@@ -141,16 +143,16 @@ const LocationData: Location[] = [
           "This visualisation of a possible intervention is based on an artwork made by Gert Sennema for the Jewish street in Groningen, the Netherlands. For this intervention we would ask Jewish artists to create art based on the heritage of the Ghetto."
         ]
       },
+      {
+        audio: "ghetto/sound.mp4",
+        text: soundText,
+      }
     ],
   },
   {
     name: "Castello di St. Angelo",
     location: [228, 364],
     items: [
-      {
-        text: "",
-        audio: "castel.mp4",
-      },
       {
         text: "The Castello di Sant Angelo is a multilayered structure at the heart of which lies the Hadrian mausoleum built by imperator Hadrian between 123 and 139 A.D. It is one of the first buildings erected on the right side of the river. It was used as the resting place for the ruling imperators until 217 A.D. after which it eventually became a fortress. In the medieval ages, the structure changed hands between different important families until the Orsini. One of them became Pope Niccolò III under whose commission the Passetto di Borgo passage to the Vatican was built. From 1367 onwards, the Mausoleum became a defensive castle for the popes, even against the Napoleonic invasion. The military use of the castle stopped in 1901 when its restorations began.",
         image: "castello/image1.png",
@@ -180,6 +182,10 @@ const LocationData: Location[] = [
         ],
         image: "castello/image5.png",
       },
+      {
+        text: soundText,
+        audio: "castel.mp4",
+      },
     ],
   },
   {
@@ -202,8 +208,16 @@ const LocationData: Location[] = [
         text: "2015 View of the Caffè Tevere, small bar located in the enclosure wall of the Mattatoio and meeting point of the students. Photography by Marco Foschi.",
       },
       {
+        image: "mattatoio/extra.pg",
+        text: "A visualisation of Mattatoio before the intervention.",
+      },
+      {
         image: "mattatoio/Mattatoio_intervention.jpg",
         text: "Our intervention proposes to re-value the parking space situated between the Mattatoio and the Tevere, together with the Lungotevere Testaccio. The parking area becomes a piazza and connects itself to the new green, pedestrian and cyclist friendly promenade. The Caffè Tevere plays the role of an activator for this new urban context.",
+      },
+      {
+        audio: "mattatoio/audio.mp4",
+        text: soundText,
       },
     ],
   },
