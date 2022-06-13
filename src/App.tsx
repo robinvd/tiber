@@ -37,6 +37,7 @@ const themeOptions: ThemeOptions = {
 
 interface Location {
   name: string,
+  color?: number,
   location?: [number, number],
   items: {
     image?: string,
@@ -107,7 +108,7 @@ const LocationData: Location[] = [
       },
       {
         image: "location3/image7.png",
-        text: "",
+        text: "The planned platforms allow people to sit and stay along the riverbanks. From there, you will be able to enjoy a unique view not only on the projections recalling the Porto de Ripa Grande but also on the Emporium. This is an interesting point located right on the other side of the river, ruins that are being excavated and turned into an open-air museum.",
       },
 
     ],
@@ -208,7 +209,7 @@ const LocationData: Location[] = [
         text: "2015 View of the Caffè Tevere, small bar located in the enclosure wall of the Mattatoio and meeting point of the students. Photography by Marco Foschi.",
       },
       {
-        image: "mattatoio/extra.pg",
+        image: "mattatoio/extra.jpg",
         text: "A visualisation of Mattatoio before the intervention.",
       },
       {
@@ -328,6 +329,52 @@ const LocationData: Location[] = [
       },
     ],
   },
+  {
+    name: "Colonne delle Piene del Tevere",
+    color: 2,
+    location: [306, 318],
+    items: [
+      { text: "", image: "water/image1.jpg" },
+      { text: "", image: "water/image2.jpg" },
+      { text: "The two columns with the functions of hydrometers were installed together with the Fountain of the Navigators at Rome’s northern port of Ripetta in 1704 when the Port was replanned by Alessandro Specchi and Carlo Fontana. The whole composition was moved in 1875 and in 1930 it was reassembled at the Piazza del Porto di Ripetta where you can find it today. The plaques on the columns correspond to the water level during floods between 1495 al 175. A hand indicates the height reached by the floods of the Tiber, with the date and name of the reigning Pope. (As the street level today is some meters higher than the original level of the fountain, the heights are not absolute measures)." }
+    ]
+  },
+  {
+    name: "Fontana della Barcaccia",
+    color: 2,
+    location: [389, 307],
+    items: [
+      { text: "The fountain of the boat in Piazza di Spagna, executed by Pietro Bernini assisted by his son Gian Lorenzo, commemorates a boat dragged to the location during the flood of 1598 which reached 5 meters above the current street level. 18th century drawing by G.B. Piranesi.", image: "water/image3.jpg" },
+    ]
+  },
+  {
+    name: "Basilika di Santa Maria Sopra Minerva",
+    color: 2,
+    location: [336, 429],
+    items: [
+      { text: "", image: "water/image4.jpg" },
+      { text: "", image: "water/image5.jpg" },
+      { text: "Plaques dating as far back as the 15th century can be found on the southwest end of the church’s façade. Photos published on Google maps." },
+    ]
+  },
+  {
+    name: "Idrometro Largo S. Rocco",
+    color: 2,
+    location: [331, 319],
+    items: [
+      { image: "water/image6.jpg", text: "Originally, this hydrometer was installed at the Porto di Ripetta. It was installed on the church wall after the construction of the retention walls. Photo published on Wikipedia." },
+    ]
+  },
+  {
+    name: "Santo Spirito in Sassia",
+    color: 2,
+    location: [143, 382],
+    items: [
+      {
+        image: "water/image7.png", text: "The occasion for the commemorative plaque on the west façade of Santo Spirito in Sassia was the destructive flood of 1598, the same for which Bernini designed the Fontana della Barcaccia. Photo published on PassagiLenti.com"
+      },
+    ]
+  },
 ]
 
 function getTexts(item: string | string[]): string[] {
@@ -368,7 +415,7 @@ function MapView(props: { current: number | null, setCurrent: (x: number) => voi
           if (location.location) {
             return <img
               key={index}
-              style={{ left: location.location[0], top: location.location[1] + 5 }}
+              style={{ left: location.location[0], top: location.location[1] + 5, filter: location.color ? "hue-rotate(180deg)" : "" }}
               className={className}
               src="pointer.png"
               onClick={() => props.setCurrent(index)}
@@ -393,7 +440,7 @@ function InfoView(props: { current: number | null, next: () => void }) {
                 Welcome to “Project Ciao Tevere”!
               </Typography>
               <Typography>
-                On this website, you will find marked spots on the map along the river Tiber in Rome that will bring you face to (digital)face with heritage. Do you want to explore the heritage of the river? Go ahead and click on one of the points, the website will show you, in chronological order, the changes that the river and the urban fabric went through. For the full experience, go for a walk along the Tiber and explore the points at the geographical location and try to envision the heritage (or maybe there is still evidence of it?!). Some of the spots on the maps have, as a final slide,  a visualisation that this project proposes for an intervention. The goal of the intervention is to make a connection between the heritage and nowadays Tiber. Feel free to share your experience with the project and use @projectciaotevere on Twitter to be featured on the website!
+                On this website, you will find marked spots on the map along the river Tiber in Rome that will bring you face to (digital)face with heritage.Do you want to explore the heritage of the river?Go ahead and click on one of the points, the website will show you, in chronological order, the changes that the river and the urban fabric went through.For the full experience, go for a walk along the Tiber and explore the points at the geographical location and try to envision the heritage (or maybe there is still evidence of it?!). Some of the spots on the maps have, as a final slide,  a visualisation that this project proposes for an intervention. The goal of the intervention is to make a connection between the heritage and nowadays Tiber. For those of you who are interested in exploring the traces of the Tevere in the contemporary urban fabric, you go can on a plaque hunt along the green route. Feel free to share your experience with the project and use @projectciaotevere on Twitter to be featured on the website!
                 Go and explore!
               </Typography>
             </CardContent>
